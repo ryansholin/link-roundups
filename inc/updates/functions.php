@@ -90,6 +90,21 @@ function lroundups_delete_argolinks_flush_option() {
 }
 add_action( 'lroundups_update_0.3.2', 'lroundups_delete_argolinks_flush_option', 10 );
 
+/**
+ * Update widget keys
+ * · argo_links_widget
+ * · argo_link_roundups_widget
+ *
+ * @since 0.3.2
+ */
+function lroundups_deactivate_old_widgets() {
+	// just disable pls
+	unregister_widget('argo_links_widget');
+	unregister_widget('argo_link_roundups_widget');
+	
+}
+add_action( 'lroundups_update_0.3.2', 'lroundups_deactivate_old_widgets', 10 );
+
 /*
  * Update utility functions below
  */
